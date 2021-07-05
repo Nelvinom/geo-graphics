@@ -22,3 +22,4 @@ $headers = "From: $visitor_email \r\n";
 mail($to,$email_subject,$email_body,$headers);
 
 $headers = ("Location: contact.html");
+?>
