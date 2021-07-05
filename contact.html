@@ -140,8 +140,14 @@
           </div>
         </div>
         <div class="col-md-12">
+          <!-- Contact form by nelvin -->
           <div class="contact-form">
-            <form id="contact" action="" method="get">
+            <?php if(!empty($statusMsg)){ ?>
+            <p class="statusMsg <?php echo !empty($msgClass)?$msgClass:''; ?>">
+              <?php echo $statusMsg; ?>
+            </p>
+            <?php } ?>
+            <form id="contact" action="vendor/contact-handler.php" method="post">
               <div class="row">
                 <div class="col-lg-4 col-md-12 col-sm-12">
                   <fieldset>
@@ -150,7 +156,7 @@
                 </div>
                 <div class="col-lg-4 col-md-12 col-sm-12">
                   <fieldset>
-                    <input name="email" type="text" class="form-control" id="email" pattern="[^ @]*@[^ @]*"
+                    <input name="email" type="text" class="form-control" id="email" placeholder="email@exapmle.com" pattern="[^ @]*@[^ @]*"
                       placeholder="E-Mail Address" required="">
                   </fieldset>
                 </div>
